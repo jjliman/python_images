@@ -23,6 +23,8 @@ source_files = os.listdir(source_folder_path)
 
 for source_file in source_files:
     source_file_path = source_folder_path + source_file
-    output_file_path = output_folder_path + source_file[0:-4] + '.png'
+    source_file_clean = os.path.splitext(source_file)
+    output_file_path = output_folder_path + source_file_clean[0] + '.png'
+    print(output_file_path)
 
     save_to_png(source_file_path, output_file_path)
